@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Ação</title>
+</head>
+<body>
+    <h1>Editar Ação</h1>
+    <form action="{{ url_for('edit', id=stock.id) }}" method="POST">
+        <label for="name">Nome da Ação:</label>
+        <input type="text" name="name" id="name" value="{{ stock.name }}"><br>
+        <label for="price">Preço:</label>
+        <input type="text" name="price" id="price" value="{{ stock.price }}"><br>
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{{ url_for('index') }}">Voltar</a>
+</body>
+</html>

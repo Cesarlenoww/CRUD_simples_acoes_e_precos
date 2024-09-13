@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Ações</title>
+</head>
+<body>
+    <h1>Lista de Ações</h1>
+    <a href="{{ url_for('create') }}">Adicionar Nova Ação</a>
+    <ul>
+        {% for stock in stocks %}
+            <li>
+                {{ stock.name }} - R$ {{ stock.price }}
+                <a href="{{ url_for('edit', id=stock.id) }}">Editar</a>
+                <form action="{{ url_for('delete', id=stock.id) }}" method="POST" style="display:inline;">
+                    <button type="submit">Excluir</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
